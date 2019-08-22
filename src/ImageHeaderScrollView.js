@@ -299,6 +299,7 @@ class ImageHeaderScrollView extends Component<Props, State> {
             useNativeDriver
               ? Animated.event([{ nativeEvent: { contentOffset: { y: this.state.scrollY } } }], {
                   useNativeDriver: true,
+                  listener: this.props.onScroll || null
                 })
               : this.onScroll
           }
